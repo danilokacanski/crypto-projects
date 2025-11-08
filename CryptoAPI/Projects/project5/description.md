@@ -1,0 +1,1 @@
+This project makes Exel file with all the data for various Crypto.

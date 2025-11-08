@@ -1,0 +1,1 @@
+In this project info about top 100 Cryptos are sorted based on selected criteria.
