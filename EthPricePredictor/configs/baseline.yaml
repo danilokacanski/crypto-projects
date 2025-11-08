@@ -1,0 +1,38 @@
+data_path: ETH-USD.csv
+target_column: Close
+frequency: D
+output_dir: artifacts
+horizons:
+  - steps_ahead: 1
+    lookback: 30
+    test_size: 120
+  - steps_ahead: 10
+    lookback: 60
+    test_size: 180
+  - steps_ahead: 30
+    lookback: 90
+    test_size: 210
+models:
+  - name: ses
+    type: ses
+    params:
+      smoothing_level: null
+  - name: arima
+    type: arima
+    params:
+      order: [2, 1, 2]
+  - name: mlp
+    type: mlp
+    params:
+      hidden_layer_sizes: [128, 64]
+      activation: relu
+      learning_rate_init: 0.0005
+      max_iter: 750
+  - name: lstm
+    type: lstm
+    params:
+      units: 64
+      dropout: 0.1
+      epochs: 30
+      batch_size: 32
+      learning_rate: 0.0005
